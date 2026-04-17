@@ -3,9 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simbiat Jinadu</title>
+    <title>Profile Card | Simbiat Jinadu</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <article data-testid="test-profile-card" class="profile-card">
+        
+        <figure class="avatar-container">
+            <img 
+                src="download.jpeg" 
+                alt="fur elise" 
+                data-testid="test-user-avatar" 
+                class="profile-img"
+            >
+        </figure>
+
+        <header>
+            <h2 data-testid="test-user-name">bntyTechie</h2>
+        </header>
+
+        <p data-testid="test-user-bio" class="bio">
+           Part Medic, Part Techie. Fully responsible for the bugs stressing your CPU 😶
+        </p>
+
+        <div class="time-display" aria-live="polite">
+            <span style="font-size: 10px; display: block; opacity: 0.6;">CURRENT UTC TIME (MS)</span>
+            <span data-testid="test-user-time" id="milliseconds-clock"></span>
+        </div>
+
+        <section class="list-section">
+            <h3 class="list-title">Hobbies</h3>
+            <ul data-testid="test-user-hobbies">
+                <li>Creating Digital Chaos</li>
+                <li>Immersive Learning</li>
+                <li>Fine Dining (Indomie Edition)</li>
+            </ul>
+        </section>
+
+        <section class="list-section">
+            <h3 class="list-title">Dislikes</h3>
+            <ul data-testid="test-user-dislikes">
+                <li>Manual Workflows</li>
+                <li>Inefficiency</li>
+                <li>Airtel’s Appetite</li>
+            </ul>
+        </section>
+
+        <nav class="social-nav">
+            <ul data-testid="test-user-social-links">
+                <li>
+                    <a href="https://github.com/simby1" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github" class="social-link">GitHub</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/simbiat-jinadu" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin" class="social-link">LinkedIn</a>
+                </li>
+            </ul>
+        </nav>
+    </article>
+
+    <script>
+        function updateTime() {
+            document.getElementById('milliseconds-clock').textContent = Date.now();
+        }
+        setInterval(updateTime, 10);
+        updateTime();
+    </script>
 </body>
 </html>
